@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import { CommentDetail } from './components/CommentDetail';
 
-class App extends Component {
+const person = {
+  // avatar: {faker.image.avatar()},
+  name: 'Sam',
+  date: 'Today at 8:00pm',
+  comment: 'Nice Blog Guy!',
+}
+
+
+
+class App extends Component<any, any> {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <>
+        <CommentDetail person={person} />
+      </>
     );
   }
 }
 
-export default App;
+export default App
