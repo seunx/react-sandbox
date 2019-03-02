@@ -15,7 +15,7 @@ class App extends Component<any, any> {
   render() {
     return (
       <>
-        <CommentDetail person={person} />
+        <CommentDetail />
       </>
     );
   }
