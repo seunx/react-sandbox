@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-export default class SearchBar extends Component<any, any> {
+class SearchBar extends Component<any, any> {
   state = { term: "" };
 
   onFormSubmit = (e: any) => {
     e.preventDefault();
 
-    this.props.onSubmit(this.state.term);
+    this.props.onsubmit(this.state.term);
   };
 
   render() {
@@ -27,3 +27,5 @@ export default class SearchBar extends Component<any, any> {
     );
   }
 }
+
+export default SearchBar;
