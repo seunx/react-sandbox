@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SongList from "./components/SongList";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+import "./App.css";
+import SongDetail from "./components/SongDetail";
+
+export default () => {
+  return (
+    <div className="ui container grid">
+      <div className="ui row">
+        <div className="column eight wide">
+          <SongList />
+        </div>
+        <div className="column eight wide">
+          <SongDetail />
+        </div>
       </div>
-    );
-  }
-}
-
-export default App;
+    </div>
+  );
+};
