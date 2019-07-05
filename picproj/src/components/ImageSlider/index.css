@@ -1,0 +1,15 @@
+img {
+	max-width: 100%;
+}
+
+.img-carousel {
+	position: relative;
+}
+.btn {
+	font-size: 13rem;
+	position: absolute;
+}
+
+.btn-right {
+	right: 100px;
+}
