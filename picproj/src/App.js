@@ -1,35 +1,27 @@
 import React from 'react';
 import ImageSlider from './components/ImageSlider';
+import axios from 'axios';
 
-const images = [
-	{
-		originalImage: `https://testpicproj.s3.us-east-2.amazonaws.com/1.png`,
-		alt: 1
-	},
-	{
-		originalImage: `https://testpicproj.s3.us-east-2.amazonaws.com/2.jpg`,
-		alt: 2
-	},
-	{
-		originalImage: `https://testpicproj.s3.us-east-2.amazonaws.com/3.png`,
-		alt: 3
-	},
-	{
-		originalImage: `https://testpicproj.s3.us-east-2.amazonaws.com/4.jpg`,
-		alt: 4
-	},
-	{
-		originalImage: `https://testpicproj.s3.us-east-2.amazonaws.com/5.jpg`,
-		alt: 5
+class App extends React.Component {
+	state = { images: [] };
+	getImages = () => {
+		axios
+			.get('http://localhost:3300/api/pictures')
+			.then(res => {
+				this.setState({ images: res.data.Contents });
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
+
+	render() {
+		return <ImageSlider images={this.state.images} />;
 	}
-];
 
-function App() {
-	return (
-		<div>
-			<ImageSlider images={images} />
-		</div>
-	);
+	componentDidMount() {
+		this.getImages();
+	}
 }
 
 export default App;

@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from './slider';
 import Buttons from './buttons';
 import './index.css';
-
 export default class index extends React.Component {
 	state = { currentImage: 0 };
 
@@ -43,7 +42,6 @@ export default class index extends React.Component {
 			</div>
 		);
 	}
-
 	componentDidMount() {
 		document.addEventListener('keydown', this.handleKeyDown);
 	}

@@ -2,14 +2,20 @@
 	box-sizing: border-box;
 	font-size: 62.5%;
 }
+body {
+	background: #000;
+}
+.img-a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 img {
+	text-align: center;
 	max-width: 100%;
+	width: 75%;
 }
 
-.img-slide {
-	position: fixed;
-	z-index: -999;
-}
 .btn {
 	font-size: 2rem;
 	color: rgba(128, 126, 126, 0.979);
