@@ -1,16 +1,15 @@
-import React from 'react';
+import React from "react";
+import SlideIndex from "../slideIndex";
 
-export default props => {
-	return (
-		<>
-			{props.images.map((image, i) => (
-				<img
-					className="img-carousel"
-					key={i}
-					src={require(`../../../${image.originalImage}`)}
-					alt={image.alt}
-				/>
-			))}
-		</>
-	);
+export default ({ images, index, end }) => {
+  return (
+    <>
+      <img
+        className="img-slide"
+        src={`${images.originalImage}`}
+        alt={images.alt}
+      />
+      <SlideIndex index={index} end={end} />
+    </>
+  );
 };

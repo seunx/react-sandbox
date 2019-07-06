@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
 
-export default () => {
-	return (
-		<div>
-			<p className="btn btn-left">{`<`}</p>
-			<p className="btn btn-right">{`>`}</p>
-		</div>
-	);
+export default ({ direction, symbol, btnClick }) => {
+  return (
+    <div className={`btn btn-${direction}`} onClick={btnClick}>
+      <p className="symbol">{symbol}</p>
+    </div>
+  );
 };
